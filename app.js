@@ -1,4 +1,8 @@
-import * as db from "/db.js";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+const db = new DynamoDBClient({});
+
+module.exports = db;
+
 import {
     GetItemCommand,
     PutItemCommand,
