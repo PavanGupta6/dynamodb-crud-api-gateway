@@ -1,13 +1,13 @@
-const db = require("./db");
-const {
+import * as db from "./db";
+import {
     GetItemCommand,
     PutItemCommand,
     DeleteItemCommand,
     ScanCommand,
     UpdateItemCommand,
-} = require("@aws-sdk/client-dynamodb");
+  } from '@aws-sdk/client-dynamodb';
 
-const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 const getPost = async (event) => {
     const response = { statusCode: 200 };
     try {
