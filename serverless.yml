@@ -13,7 +13,7 @@ plugins:
   - serverless-iam-roles-per-function
 functions:
   getPost:
-    handler: api.getPost
+    handler: app.getPost
     name: get-post
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -27,7 +27,7 @@ functions:
           - "dynamodb:GetItem"
         Resource: !GetAtt PostsTable.Arn
   createPost:
-    handler: api.createPost
+    handler: app.createPost
     name: create-post
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -41,7 +41,7 @@ functions:
           - "dynamodb:PutItem"
         Resource: !GetAtt PostsTable.Arn
   updatePost:
-    handler: api.updatePost
+    handler: app.updatePost
     name: update-post
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -55,7 +55,7 @@ functions:
           - "dynamodb:UpdateItem"
         Resource: !GetAtt PostsTable.Arn
   deletePost:
-    handler: api.deletePost
+    handler: app.deletePost
     name: delete-post
     memorySize: 128 # mb
     timeout: 5 # seconds
@@ -69,7 +69,7 @@ functions:
           - "dynamodb:DeleteItem"
         Resource: !GetAtt PostsTable.Arn
   getAllPosts:
-    handler: api.getAllPosts
+    handler: app.getAllPosts
     name: get-all-posts
     memorySize: 128 # mb
     timeout: 5 # seconds
