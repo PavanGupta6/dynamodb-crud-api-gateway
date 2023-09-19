@@ -1,4 +1,4 @@
-import * as db from "../db";
+import * as db from "/db.js";
 import {
     GetItemCommand,
     PutItemCommand,
