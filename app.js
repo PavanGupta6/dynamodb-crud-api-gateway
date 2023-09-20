@@ -1,14 +1,12 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const db = new DynamoDBClient();
-
 const {
     GetItemCommand,
+    DynamoDBClient,
     PutItemCommand,
     DeleteItemCommand,
     ScanCommand,
     UpdateItemCommand,
   } = require('@aws-sdk/client-dynamodb');
-
+const db = new DynamoDBClient();
 const { marshall, unmarshall } = require ('@aws-sdk/util-dynamodb');
 
 const getPost = async (event) => {
