@@ -1,17 +1,16 @@
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-const db = new DynamoDBClient({});
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const db = new DynamoDBClient();
 
-//module.exports = db;
-
-import {
+const {
     GetItemCommand,
     PutItemCommand,
     DeleteItemCommand,
     ScanCommand,
     UpdateItemCommand,
-  } from '@aws-sdk/client-dynamodb';
+  } = require('@aws-sdk/client-dynamodb');
 
-import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
+const { marshall, unmarshall } = require ('@aws-sdk/util-dynamodb');
+
 const getPost = async (event) => {
     const response = { statusCode: 200 };
     try {
@@ -37,6 +36,7 @@ const getPost = async (event) => {
     }
     return response;
 };
+
 const createPost = async (event) => {
     const response = { statusCode: 200 };
     try {
@@ -61,6 +61,7 @@ const createPost = async (event) => {
     }
     return response;
 };
+
 const updatePost = async (event) => {
     const response = { statusCode: 200 };
     try {
@@ -95,6 +96,7 @@ const updatePost = async (event) => {
     }
     return response;
 };
+
 const deletePost = async (event) => {
     const response = { statusCode: 200 };
     try {
